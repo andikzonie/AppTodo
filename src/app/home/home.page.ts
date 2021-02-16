@@ -7,6 +7,20 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  taskName: any = '';
+  taskList = [];
+
   constructor() {}
+
+  addTask() {
+    if (this.taskName.length > 0) {
+      let task = this.taskName;
+      this.taskList.push(task);
+      this.taskName = '';
+    }
+  }
+  deleteTask(index) {
+    this.taskList.splice(index, 1);
+  }
 
 }
